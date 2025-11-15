@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moon Mist | Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Poppins", sans-serif;
+    }
+
+    body{
+      background:#f5eee9;
+      color:#4e3b31;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 60px;
+      background:#fff7f2;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .navbar .logo{
+      font-size:26px;
+      font-weight:600;
+      color:#8b6f5a;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#4e3b31;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#c06374;
+    }
+
+    /* HERO */
+  /* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 80px;
+  background:#f5eee9; /* remove main background image */
+}
+
+.hero-left{
+  max-width:550px;
+}
+
+.hero-left h1{
+  font-size:46px;
+  color:#8b6f5a;
+  margin-bottom:12px;
+}
+
+.hero-left p{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.hero-img{
+  width:50%;
+  height:80vh;
+  background:url("hanna-balan-YasQvzPbGOQ-unsplash.jpg") center/cover no-repeat;
+  border-radius:20px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.12);
+}
+
+
+    .hero-content{
+      background:rgba(255, 247, 242, 0.7);
+      padding:40px;
+      border-radius:15px;
+      backdrop-filter:blur(4px);
+      max-width:550px;
+    }
+
+    .hero h1{
+      font-size:46px;
+      color:#8b6f5a;
+      margin-bottom:12px;
+    }
+
+    .hero p{
+      font-size:18px;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#4e3b31;
+      color:#fff;
+      padding:12px 28px;
+      border-radius:25px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      background:#8b4a55;
+    }
+
+    /* CATEGORIES */
+    .categories{
+      padding:120px 80px;
+      text-align:center;
+    }
+
+    .categories h2{
+      font-size:32px;
+      margin-bottom:40px;
+      color:#8b6f5a;
+    }
+
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .category-card{
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .category-card:hover{
+      transform:scale(1.04);
+    }
+
+    .category-card img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .category-card h3{
+      padding:15px;
+      background:#fff7f2;
+      color:#4e3b31;
+      font-size:18px;
+      font-weight:600;
+    }
+
+    /* FEATURED PRODUCTS */
+    .featured{
+      padding:120px 80px;
+      background:#fff7f2;
+      text-align:center;
+    }
+
+    .featured h2{
+      font-size:32px;
+      margin-bottom:40px;
+      color:#4e3b31;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .product-card{
+      background:#fff;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .product-card:hover{
+      transform:scale(1.03);
+    }
+
+    .product-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .product-card h4{
+      margin:12px 0 5px;
+      font-size:18px;
+      color:#4e3b31;
+    }
+
+    .product-card p{
+      margin-bottom:15px;
+      color:#c06374;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    /* ABOUT US */
+    .about{
+      padding:120px 80px;
+      display:flex;
+      gap:60px;
+      align-items:center;
+      background:#f5eee9;
+    }
+
+    .about img{
+      width:460px;
+      border-radius:15px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about-text h2{
+      font-size:38px;
+      color:#8b6f5a;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      font-size:18px;
+      margin-bottom:15px;
+      line-height:1.7;
+    }
+
+    /* FOOTER */
+    .footer{
+      background:#8b6f5a;
+      color:white;
+      text-align:center;
+      padding:30px;
+      margin-top:0;
+    }
+
+    .footer a{
+      color:#ffe6df;
+      text-decoration:none;
+      font-weight:500;
+    }
+    /* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff7f2;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: #4e3b31;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background: #ffe8e3;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Moon Mist</div>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Cart</a></li>
+    <li><a href="login.html">Login</a></li>
+
+    <!-- B2B DROPDOWN -->
+    <li class="dropdown">
+      <a href="#" class="dropbtn">B2B ▼</a>
+      <div class="dropdown-content">
+        <a href="#">Candles</a>
+        <a href="#">Containers</a>
+        <a href="#">Bracelets</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+  <!-- HERO -->
+<!-- HERO -->
+<section class="hero">
+  
+  <div class="hero-left">
+    <h1>Handcrafted Candles for Calm Living</h1>
+    <p>Experience natural scents & elegant candle art, designed to bring warmth and serenity to your home.</p>
+    <a href="#" class="btn">Shop Now</a>
+  </div>
+
+  <div class="hero-img"></div>
+
+</section>
+
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      
+      <div class="category-card">
+        <img src="download (14).jpeg" alt="candles">
+        <h3>Candles</h3>
+      </div>
+
+      <div class="category-card">
+        <img src="cont.jpeg" alt="containers">
+        <h3>Containers</h3>
+      </div>
+
+      <div class="category-card">
+        <img src="download (16).jpeg" alt="bracelets">
+        <h3>Bracelets</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="Handmade Heart Rose Soy Wax Candle_ Floral Home Decor.jpeg">
+        <h4>Candles</h4>
+        <p>₹199</p>
+      </div>
+
+      <div class="product-card">
+        <img src="container.jpeg">
+        <h4>Containers</h4>
+        <p>₹299</p>
+      </div>
+
+      <div class="product-card">
+        <img src="Seed Bead Bracelet in Strawberry Matcha Inspired Colors, 14k Gold Plated - Etsy.jpeg">
+        <h4>Bracelets</h4>
+        <p>₹199</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="about">
+    <img src="185925a43b30850f2f248f9df62f21f5.avif" alt="About Moon Mist">
+
+    <div class="about-text">
+      <h2>About Moon Mist</h2>
+      <p>
+        Moon Mist celebrates the art of handmade candle crafting. Every candle is hand-poured using premium soy wax, 
+        eco-friendly wicks, and long-lasting signature fragrances.
+      </p>
+      <p>
+        Our mission is to bring warmth, elegance, and calmness to your living space with aesthetic, beautifully 
+        designed candles and home decor.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2025 Moon Mist | All Rights Reserved  
+    <br><a href="#">Instagram</a> • <a href="#">Facebook</a>
+  </footer>
+
+</body>
+</html>
