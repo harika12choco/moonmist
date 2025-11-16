@@ -329,7 +329,8 @@ body{
 /* ---------- SHOP BY CATEGORY ---------- */
 .categories {
   width: 90%;
-  margin: 60px auto;
+  margin: 0 auto;
+  padding-top: 80px; /* space below hero */
 }
 
 .categories h2 {
@@ -337,7 +338,9 @@ body{
   font-size: 32px;
   font-weight: 600;
   color: var(--muted);
-  margin-bottom: 28px;
+  margin: 0;           /* remove extra top margin */
+  padding-bottom: 20px; /* space between heading and cards */
+  scroll-margin-top: 100px; /* for smooth scroll offset if navbar is sticky */
 }
 
 .category-grid {
@@ -345,43 +348,18 @@ body{
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
   width: 100%;
-  justify-items: center; /* centers the cards */
-}
-.category-grid a {
-    text-decoration: none;   /* removes underline */
-    color: inherit;          /* keeps your same text color */
-    display: block;          /* keeps card layout intact */
+  justify-items: center;
+  padding-top: 0; /* remove extra space above grid */
 }
 
-
-/* Cards same style as product cards */
-.category-card {
-  background: #fff;
-  border-radius: 20px; /* rounded rectangle */
-  overflow: hidden;
-  width: 260px;
-  text-align: center;
-  box-shadow: var(--card-shadow);
-  transition: transform .25s ease;
-}
-
-.category-card:hover {
-  transform: translateY(-8px);
-}
 
 .category-card img {
   width: 100%;
-  height: 220px;
+  height: 230px; /* slightly taller images */
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
 
-.category-card h3 {
-  font-size: 18px;
-  color: var(--muted);
-  margin: 14px 0 18px;
-  font-weight: 600;
-}
 /* ---------- NAVBAR DROPDOWN ---------- */
 
 .dropdown {
@@ -503,6 +481,10 @@ body{
   font-size: 1.1rem;
 
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 
@@ -542,8 +524,9 @@ body{
     <h1>Handcrafted Candles for Calm Living</h1>
     <p>Experience natural scents & elegant candle art, designed to bring warmth and serenity to your home.</p>
     <div class="btn-container">
-  <button class="btn">Shop Now</button>
+  <a href="#categories" class="btn">Shop Now</a>
 </div>
+
   </div>
 
   <div class="hero-img"></div>
@@ -571,14 +554,14 @@ body{
 
 
   <!-- CATEGORIES -->
- <section class="categories">
+ <section id="categories" class="categories">
   <h2>Shop by Category</h2>
 
   <div class="category-grid">
 <a href="candles.html" class="card">
   <!-- First image -->
   <div class="first-content">
-    <img src="download (14).jpeg" alt="Candles">
+    <img src="Valentines Rose Candle_ Rose Scented Candle_ New Candle_ Flower Candle_Mother's Day_Special Occasion_Wedding Candle.jpeg" alt="Candles">
   </div>
 
   <!-- Second image (hover) -->
