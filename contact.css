@@ -1,0 +1,150 @@
+:root{
+  --bg:#f5eee9;
+  --soft:#fff7f2;
+  --accent:#8b6f5a;
+  --muted:#4e3b31;
+  --berry:#a85a5a;
+}
+
+/* RESET */
+body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:var(--bg);
+  color:var(--muted);
+  padding-top:90px;
+}
+
+/* -------------------------------
+   NAVBAR
+--------------------------------*/
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+
+  background:var(--bg);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+  font-family:"Cinzel Decorative", serif;
+  font-size:32px;
+  font-weight:700;
+  color:var(--berry);
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
+}
+
+.nav-links a:hover{
+  color:var(--berry);
+}
+
+/* -------------------------------
+   CONTACT SECTION
+--------------------------------*/
+.contact-section{
+  width:90%;
+  max-width:900px;
+  margin:60px auto;
+  text-align:center;
+}
+
+.contact-section h2{
+  font-size:36px;
+  font-family:"Playfair Display", serif;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.contact-subtext{
+  color:rgba(78,59,49,0.85);
+  margin-bottom:30px;
+  font-size:16px;
+}
+
+.contact-box{
+  background:var(--soft);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.07);
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #c9b8ae;
+  border-radius:10px;
+  font-size:15px;
+  background:#fff7f2;
+  outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--berry);
+}
+
+.form-group{
+  margin-bottom:18px;
+  text-align:left;
+}
+
+.form-group label{
+  font-weight:600;
+  display:block;
+  margin-bottom:6px;
+  color:var(--muted);
+}
+
+/* BUTTON */
+.contact-btn{
+  margin-top:20px;
+  padding:12px 28px;
+  background:var(--berry);
+  color:white;
+  font-size:16px;
+  border:none;
+  border-radius:28px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.contact-btn:hover{
+  background:#914444;
+}
+
+/* -------------------------------
+   FOOTER
+--------------------------------*/
+.footer{
+  background:var(--berry);
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:50px;
+}
+
+.footer a{
+  color:white;
+  text-decoration:none;
+}

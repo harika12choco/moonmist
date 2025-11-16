@@ -6,56 +6,36 @@
 <title>Candles | Moon Mist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 
-
 <style>
-  body{margin:0;font-family:"Poppins",sans-serif;background:#f5eee9;color:#4e3b31}
+body{margin:0;font-family:"Poppins",sans-serif;background:#f5eee9;color:#4e3b31}
 
-  .navbar{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:18px 60px;background:transparent;position:sticky;top:0
-  }
-  .logo{font-family:"Playfair Display";font-size:26px;color:#a85a5a;font-weight:600}
-  .nav-links{list-style:none;display:flex;gap:26px}
-  .nav-links a{text-decoration:none;color:#4e3b31;font-weight:500}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:18px 60px;background:transparent;position:sticky;top:0}
+.logo{font-family:"Cinzel Decorative", serif;font-weight:700;font-size:32px;color:#a85a5a}
+.nav-links{list-style:none;display:flex;gap:26px}
+.nav-links a{text-decoration:none;color:#4e3b31;font-weight:500}
 
-  .category-page{padding:60px 80px}
-  .category-page h2{text-align:center;font-size:32px;margin-bottom:30px}
+.category-page{padding:60px 80px}
+.category-page h2{text-align:center;font-size:32px;margin-bottom:30px}
 
-  .product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
-  }
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
 
-  .product-card{
-    background:white;border-radius:20px;overflow:hidden;
-    box-shadow:0 8px 22px rgba(0,0,0,0.09);
-    text-align:center;transition:.3s;
-  }
-  .product-card:hover{transform:translateY(-5px)}
-  .product-card img{
-    width:100%;height:260px;object-fit:cover;
-    border-radius:20px 20px 0 0;
-  }
-  .product-card h4{margin:12px 0 5px;font-size:18px}
-  .product-card p{color:#a85a5a;font-size:18px;font-weight:bold;margin-bottom:12px}
+.product-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,0.09);text-align:center;transition:.3s}
+.product-card:hover{transform:translateY(-5px)}
+.product-card img{width:100%;height:260px;object-fit:cover;border-radius:20px 20px 0 0}
+.product-card h4{margin:12px 0 5px;font-size:18px}
+.product-card p{color:#a85a5a;font-size:18px;font-weight:bold;margin-bottom:12px}
 
-  .footer{
-    background:#a85a5a;color:white;text-align:center;padding:30px;margin-top:40px;
-  }
-  .footer a{color:white;text-decoration:none}
-  .logo{
-     font-family: "Cinzel Decorative", serif;
-    font-weight: 700;
-    font-size: 32px;
-  }
-  
+.add-btn{background-color:#cc8f72;color:#fff;border:none;padding:8px 12px;cursor:pointer;border-radius:5px;margin-top:10px}
+.add-btn:hover{background-color:#b3705a}
+
+/* Notification styling */
+.cart-notification{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background-color:#4BB543;color:#fff;padding:12px 20px;border-radius:8px;display:none;font-weight:bold;box-shadow:0 4px 6px rgba(0,0,0,0.2);z-index:1000}
+
+.footer{background:#a85a5a;color:white;text-align:center;padding:30px;margin-top:40px;}
+.footer a{color:white;text-decoration:none}
 </style>
-
 </head>
 <body>
 
@@ -63,6 +43,7 @@
   <div class="logo">Moon Mist</div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
+    <li><a href="cart.html">Cart</a></li>
   </ul>
 </nav>
 
@@ -70,51 +51,54 @@
   <h2>Candles</h2>
 
   <div class="product-grid">
-
     <div class="product-card">
-      <img src="Valentines Rose Candle_ Rose Scented Candle_ New Candle_ Flower Candle_Mother's Day_Special Occasion_Wedding Candle.jpeg">
+      <img src="Valentines Rose Candle_ Rose Scented Candle_ New Candle_ Flower Candle_Mother's Day_Special Occasion_Wedding Candle.jpeg" alt="Rose Blossom Candle">
       <h4>Rose Blossom Candle</h4>
       <p>₹299</p>
+      <button class="add-btn" onclick="addToCart('Rose Blossom Candle', 299)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="Handmade Candles🍬🕯️.jpeg">
+      <img src="Handmade Candles🍬🕯️.jpeg" alt="Bubble Soy Wax Candle">
       <h4>Bubble Soy Wax Candle</h4>
       <p>₹249</p>
+      <button class="add-btn" onclick="addToCart('Bubble Soy Wax Candle', 249)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="Valentinstag Herz Kerze _ Vegan Sojawachs _ Home Decor Ästhetische Kerze _ Duftende Duft _ Handarbeit Handgegossen _ Einzigartiges Geschenk _ Aromatherapie.jpeg">
+      <img src="Valentinstag Herz Kerze _ Vegan Sojawachs _ Home Decor Ästhetische Kerze _ Duftende Duft _ Handarbeit Handgegossen _ Einzigartiges Geschenk _ Aromatherapie.jpeg" alt="Heart Aroma Candle">
       <h4>Heart Aroma Candle</h4>
       <p>₹199</p>
+      <button class="add-btn" onclick="addToCart('Heart Aroma Candle', 199)">Add to Cart</button>
     </div>
-     
-    <div class="product-card">
-      <img src="Valentines Rose Candle_ Rose Scented Candle_ New Candle_ Flower Candle_Mother's Day_Special Occasion_Wedding Candle.jpeg">
-      <h4>Rose Blossom Candle</h4>
-      <p>₹299</p>
-    </div>
-
-    <div class="product-card">
-      <img src="Handmade Candles🍬🕯️.jpeg">
-      <h4>Bubble Soy Wax Candle</h4>
-      <p>₹249</p>
-    </div>
-
-    <div class="product-card">
-      <img src="Valentinstag Herz Kerze _ Vegan Sojawachs _ Home Decor Ästhetische Kerze _ Duftende Duft _ Handarbeit Handgegossen _ Einzigartiges Geschenk _ Aromatherapie.jpeg">
-      <h4>Heart Aroma Candle</h4>
-      <p>₹199</p>
-    </div>
-
-   
-
   </div>
 </section>
+
+<!-- Notification -->
+<div id="cart-notification" class="cart-notification">
+  <span>✔ Item added to cart successfully!</span>
+</div>
 
 <footer class="footer">
   © 2025 Moon Mist | All Rights Reserved
 </footer>
 
+<script>
+function addToCart(productName, price) {
+  // Get existing cart from localStorage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Add new product
+  cart.push({ name: productName, price: price });
+
+  // Save back to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Show notification
+  const notification = document.getElementById('cart-notification');
+  notification.style.display = 'block';
+  setTimeout(() => notification.style.display = 'none', 2000);
+}
+</script>
 </body>
 </html>

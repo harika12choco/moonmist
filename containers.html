@@ -6,11 +6,9 @@
 <title>Containers | Moon Mist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
-
 
 <style>
   body{margin:0;font-family:"Poppins",sans-serif;background:#f5eee9;color:#4e3b31}
@@ -38,13 +36,36 @@
   .product-card h4{margin:12px 0 5px;font-size:18px}
   .product-card p{color:#a85a5a;font-size:18px;font-weight:bold;margin-bottom:12px}
 
+  .add-btn {
+    background-color: #cc8f72;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .add-btn:hover { background-color: #b3705a; }
+
+  /* Notification styling */
+  .cart-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4BB543; /* green */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
   .footer{background:#a85a5a;color:white;text-align:center;padding:30px;margin-top:40px}
   .footer a{color:white;text-decoration:none}
-.logo{
-     font-family: "Cinzel Decorative", serif;
-    font-weight: 700;
-    font-size: 32px;
-  }
+  .logo{font-family: "Cinzel Decorative", serif;font-weight: 700;font-size: 32px;}
 </style>
 
 </head>
@@ -57,64 +78,58 @@
 
 <section class="category-page">
   <h2>Containers</h2>
-
   <div class="product-grid">
 
-      
-      <div class="product-card">
+    <div class="product-card">
       <img src="Wholesale Candle Jars.jpeg">
       <h4>Matte Ceramic Jar</h4>
       <p>₹180</p>
+      <button class="add-btn" onclick="addToCart('Matte Ceramic Jar',180)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="okk.jpeg">
       <h4>Premium Gypsum Tray</h4>
       <p>₹250</p>
+      <button class="add-btn" onclick="addToCart('Premium Gypsum Tray',250)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="download (20).jpeg">
       <h4>Glass Aroma Container</h4>
       <p>₹199</p>
+      <button class="add-btn" onclick="addToCart('Glass Aroma Container',199)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="Buy Home Decor Items Online at The Decor Kart, Home Decor Online Store.jpeg">
       <h4>Mini Storage Pot</h4>
       <p>₹149</p>
-    </div>
-      <div class="product-card">
-      <img src="Wholesale Candle Jars.jpeg">
-      <h4>Matte Ceramic Jar</h4>
-      <p>₹180</p>
+      <button class="add-btn" onclick="addToCart('Mini Storage Pot',149)">Add to Cart</button>
     </div>
 
-    <div class="product-card">
-      <img src="okk.jpeg">
-      <h4>Premium Gypsum Tray</h4>
-      <p>₹250</p>
-    </div>
-
-    <div class="product-card">
-      <img src="download (20).jpeg">
-      <h4>Glass Aroma Container</h4>
-      <p>₹199</p>
-    </div>
-
-    <div class="product-card">
-      <img src="Buy Home Decor Items Online at The Decor Kart, Home Decor Online Store.jpeg">
-      <h4>Mini Storage Pot</h4>
-      <p>₹149</p>
-    </div>
-
-
+    <!-- You can duplicate more products as needed, just add the button -->
   </div>
 </section>
 
 <footer class="footer">
   © 2025 Moon Mist | All Rights Reserved
 </footer>
+
+<div id="cart-notification" class="cart-notification">✔ Item added to cart successfully!</div>
+
+<script>
+function addToCart(productName, price){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({name: productName, price: price});
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Show notification
+  const notification = document.getElementById('cart-notification');
+  notification.style.display = 'block';
+  setTimeout(()=>{notification.style.display = 'none';},2000);
+}
+</script>
 
 </body>
 </html>

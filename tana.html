@@ -123,17 +123,59 @@ body{
   line-height:1.06;
 }
 .hero-left p{ font-size:17px; margin-bottom:18px; color:rgba(78,59,49,0.88) }
-.btn{
-  display:inline-block;
-  background:var(--berry);
-  color:#fff;
-  padding:12px 28px;
-  border-radius:28px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow: 0 6px 18px rgba(168,90,90,0.12);
+/* Button wrapper for gradient glow */
+/* Button wrapper for soft glow matching your theme */
+.btn-container {
+  display: inline-block;
+  padding: 3px; 
+  border-radius: 28px; 
+  background: linear-gradient(90deg, #a85a5a, #cc8f72); /* your theme colors */
+  position: relative;
+  transition: all 0.4s ease;
 }
-.btn:hover{ background:#914444 }
+
+.btn-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 28px;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.btn-container:hover::before {
+  background: linear-gradient(90deg, #a85a5a, #cc8f72);
+  filter: blur(1.2em);
+}
+
+.btn-container:active::before {
+  filter: blur(0.2em);
+}
+
+/* Your actual button */
+.btn {
+  display: inline-block;
+  background: #a85a5a; /* main button color */
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(168,90,90,0.12);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #914444; /* darker shade on hover */
+  transform: translateY(-2px);
+}
+
 
 /* hero image card (right) */
 .hero-img{
@@ -405,8 +447,62 @@ body{
     font-weight: 700;
     font-size: 32px;
 }
+.card {
+  width: 230px;       /* increased width */
+  height: 300px;      /* increased height */
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.7);
+  text-decoration: none;
+  color: #000;
+  margin: 15px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
 
+.card:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px 7px rgba(0,0,0,0.7);
+}
 
+.first-content, .second-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 240px;   /* bigger image portion */
+  transition: opacity 0.4s;
+}
+
+.first-content img, .second-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.first-content { opacity: 1; z-index: 1; }
+.second-content { opacity: 0; z-index: 2; }
+
+.card:hover .first-content { opacity: 0; }
+.card:hover .second-content { opacity: 1; }
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;    /* smaller white area */
+  background: #eeeaea;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 3;
+  font-size: 1.1rem;
+
+}
 
 
 
@@ -422,13 +518,13 @@ body{
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Cart</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart</a></li>
     <li><a href="login.html">Login</a></li>
 
     <!-- B2B DROPDOWN -->
     <li class="dropdown">
-      <a href="#" class="dropbtn">B2B ▼</a>
+      <a href="b2b.html" class="dropbtn">B2B ▼</a>
       <div class="dropdown-content">
         <a href="#">Candles</a>
         <a href="#">Containers</a>
@@ -445,7 +541,9 @@ body{
   <div class="hero-left">
     <h1>Handcrafted Candles for Calm Living</h1>
     <p>Experience natural scents & elegant candle art, designed to bring warmth and serenity to your home.</p>
-    <a href="" class="btn">Shop Now</a>
+    <div class="btn-container">
+  <button class="btn">Shop Now</button>
+</div>
   </div>
 
   <div class="hero-img"></div>
@@ -477,21 +575,45 @@ body{
   <h2>Shop by Category</h2>
 
   <div class="category-grid">
+<a href="candles.html" class="card">
+  <!-- First image -->
+  <div class="first-content">
+    <img src="download (14).jpeg" alt="Candles">
+  </div>
 
-    <a href="candles.html" class="category-card">
-      <img src="download (14).jpeg" alt="candles">
-      <h3>Candles</h3>
-    </a>
+  <!-- Second image (hover) -->
+  <div class="second-content">
+    <img src="Handmade Heart Rose Soy Wax Candle_ Floral Home Decor.jpeg" alt="Candles Hover">
+  </div>
 
-    <a href="containers.html" class="category-card">
-      <img src="cont.jpeg" alt="containers">
-      <h3>Containers</h3>
-    </a>
+  <!-- Text below images -->
+  <div class="card-text">
+    <h3>Candles</h3>
+  </div>
+</a>
 
-    <a href="bracelets.html" class="category-card">
-      <img src="download (16).jpeg" alt="bracelets">
-      <h3>Bracelets</h3>
-    </a>
+   <a href="containers.html" class="card">
+  <div class="first-content">
+    <img src="cont.jpeg" alt="Containers">
+  </div>
+  <div class="second-content">
+    <img src="Wholesale Candle Jars.jpeg" alt="Containers Hover">
+  </div>
+  <div class="card-text">
+    <h3>Containers</h3>
+  </div>
+</a>
+<a href="bracelets.html" class="card">
+  <div class="first-content">
+    <img src="download (16).jpeg" alt="Bracelets">
+  </div>
+  <div class="second-content">
+    <img src="download (24).jpeg" alt="Bracelets Hover">
+  </div>
+  <div class="card-text">
+    <h3>Bracelets</h3>
+  </div>
+</a>
 
   </div>
 </section>
